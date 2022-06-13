@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.board {
+  height: 100vh;
+  width: 100vw;
+  background-color: lightsteelblue;
+  display: flex;
+  flex-wrap: wrap;
+}
+.box {
+  height: 4vh;
+  width: 2vw;
+  background-color: lightgray;
+  border: 0.15rem solid black;
+  text-align: center;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: orange;
+}

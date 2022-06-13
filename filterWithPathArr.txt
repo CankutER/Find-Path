@@ -1,0 +1,16 @@
+let neighboursFiltered = neighbours.filter((neighbour) => {
+  if (prevId) {
+    return neighbour.domElement !== window[`box${prevId}`].domElement;
+  } else {
+    return neighbours;
+  }
+});
+// FILTER WITH CURRENT PATH
+
+neighboursFinal = neighboursFiltered.filter((neighbour) => {
+  if (
+    !pathArr.includes(window[`box${neighbour.domElement.getAttribute("id")}`])
+  ) {
+    return neighbour;
+  }
+});

@@ -1,0 +1,64 @@
+function Box(row, column) {
+  this.domElement = document.getElementById(`${row}${column}`);
+  if (column > 1) {
+    this.leftNeighbour = {
+      domElement: document.getElementById(`${row}${column - 1}`),
+      weight: 1,
+    };
+  }
+  if (column < 50) {
+    this.rightNeighbour = {
+      domElement: document.getElementById(`${row}${column + 1}`),
+      weight: 1,
+    };
+  }
+  if (row > 1) {
+    this.upNeighbour = {
+      domElement: document.getElementById(`${row - 1}${column}`),
+      weight: 1,
+    };
+  }
+  if (row < 25) {
+    this.downNeighbour = {
+      domElement: document.getElementById(`${row + 1}${column}`),
+      weight: 1,
+    };
+  }
+  if (row > 1 && column > 1) {
+    this.upLeftNeighbour = {
+      domElement: document.getElementById(`${row - 1}${column - 1}`),
+      weight: 1.41,
+    };
+  }
+  if (row > 1 && column < 50) {
+    this.upRightNeighbour = {
+      domElement: document.getElementById(`${row + 1}${column + 1}`),
+      weight: 1.41,
+    };
+  }
+  if (row < 25 && column > 1) {
+    this.downLeftNeighbour = {
+      domElement: document.getElementById(`${row + 1}${column - 1}`),
+      weight: 1.41,
+    };
+  }
+  if (row < 25 && column < 50) {
+    this.downRightNeighbour = {
+      domElement: document.getElementById(`${row + 1}${column + 1}`),
+      weight: 1.41,
+    };
+  }
+  this.allNeighbours = [
+    this.upNeighbour,
+    this.downNeighbour,
+    this.leftNeighbour,
+    this.rightNeighbour,
+    this.upLeftNeighbour,
+    this.upRightNeighbour,
+    this.downLeftNeighbour,
+    this.downRightNeighbour,
+  ];
+  this.neighbours = this.allNeighbours.filter(
+    (neighbour) => neighbour !== undefined
+  );
+}

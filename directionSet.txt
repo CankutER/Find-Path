@@ -1,0 +1,51 @@
+let neighboursFiltered = [];
+    if (rowDiff > 0) {
+      neighboursFiltered.push(
+        ...neighbours.filter((neighbour) => {
+          return (
+            neighbour.domElement.dataset.row > start.domElement.dataset.row
+          );
+        })
+      );
+    } else if ((rowDiff = 0)) {
+      neighboursFiltered.push(
+        ...neighbours.filter((neighbour) => {
+          return (neighbour.domElement.dataset.row =
+            start.domElement.dataset.row);
+        })
+      );
+    } else {
+      neighboursFiltered.push(
+        ...neighbours.filter((neighbour) => {
+          return (
+            neighbour.domElement.dataset.row < start.domElement.dataset.row
+          );
+        })
+      );
+    }
+    if (colDiff > 0) {
+      neighboursFiltered.push(
+        ...neighbours.filter((neighbour) => {
+          return (
+            neighbour.domElement.dataset.column >
+            start.domElement.dataset.column
+          );
+        })
+      );
+    } else if ((colDiff = 0)) {
+      neighboursFiltered.push(
+        ...neighbours.filter((neighbour) => {
+          return (neighbour.domElement.dataset.column =
+            start.domElement.dataset.column);
+        })
+      );
+    } else {
+      neighboursFiltered.push(
+        ...neighbours.filter((neighbour) => {
+          return (
+            neighbour.domElement.dataset.column <
+            start.domElement.dataset.column
+          );
+        })
+      );
+    }
