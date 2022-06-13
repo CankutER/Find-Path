@@ -1,0 +1,4 @@
+# Find-Path
+This is a relatively simple pathfinding project where I have tried to derive a shortest path algorithm. Main goal was to find all possible paths with weights assigned to them and store them in a very large array. However, I could not succeed to implement this because of failing finding any meaningful way to revert to any arbitrary starting point in the recursion of the function after reaching the end of the path for the first time. Thus, I have hard-coded a set of geometrical rules to find the closest node by filtering array of adjacent nodes based on mentioned rules.
+
+This work has been done completely without researching any literature about shortest path algorithms, intentionally. Goal was purely to improve my algorithmic thinking and force myself to get as close as possible to a legit way in literature.
